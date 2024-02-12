@@ -13,7 +13,7 @@ class TodoService:
     def save_todo_as_csv(self, todo: Todo, directory="storage"):
         os.makedirs(directory, exist_ok=True)
         date_prefix = datetime.now().strftime("%Y_%m_%d")
-        filename = f"{date_prefix}_{todo.user_id}.csv"
+        filename = f"{date_prefix}_{todo.id}.csv"
         filepath = os.path.join(directory, filename)
 
         with open(filepath, 'w', newline='') as csvfile:
