@@ -17,10 +17,10 @@ class ApiService:
         else:
             response.raise_for_status()
 
-    def save_todo_as_csv(self, todo):
+    def save_todo_as_csv(self, todo, dir="storage"):
         date_prefix = datetime.now().strftime("%d_%m_%Y")
         filename = f"{date_prefix}_{todo['id']}.csv"
-        filepath = os.path.join('storage', filename)
+        filepath = os.path.join(dir, filename)
 
         with open(filepath, 'w') as csvfile:
             writer = csv.writer(csvfile)
