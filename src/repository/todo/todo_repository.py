@@ -12,4 +12,4 @@ class TodoRepository:
         # return [self._map_to_domain_entity(todo) for todo in todos_data]
 
     def _map_to_domain_entity(self, todo_data) -> Todo:
-        return Todo(user_id=todo_data['id'], title=todo_data['title'], completed=todo_data['completed'])
+        return Todo(id=todo_data['id'], user_id=todo_data['userId'], title=todo_data['title'], completed=todo_data['completed'])
